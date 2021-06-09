@@ -43,6 +43,22 @@ $name=$b['name'];
 
 <br />
 <br />
+
+<table border="0" class="table" cellpadding="10" cellspacing="10" width=500px>
+ <tr><th colspan=6 ><h3 class='SubHead'><u>Gestion des citations:</u></h3></th></tr>
+ <tr><td><a href="addcit.php" class="Command">Ajouter une citation</a></td>
+<td><a href="citations.php" class="Command">Liste des citations</a></td></tr>
+</table>
+
+<br />
+<br />
+
+<table border="0" class="table" cellpadding="10" cellspacing="10" width=500px>
+ <tr><th colspan=6 ><h3 class='SubHead'><u>Gestion des emprunts:</u></h3></th></tr>
+ <tr><td><a href="emp.php" class="Command">Liste des emprunts</a></td>
+<td><a href="addemp.php" class="Command">Ajouter un eprunt</a></td></tr>
+
+</table>
 <!--
 <table border="0" class="table" cellpadding="10" cellspacing="10" width=500px >
  <tr><th colspan=6><h3 class='SubHead'><u>Gestion des demandes:</u></h3></th></tr>

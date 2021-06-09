@@ -12,6 +12,14 @@ $b=mysqli_fetch_array($a);
 $name=$b['name'];
 $id=$_POST['id'];
 $idl=$_GET['idl'];
+$aa=mysqli_query($set,"SELECT * FROM books WHERE id='$idl'");
+$bb=mysqli_fetch_array($aa);
+$nom=$bb['name'];
+$autheur=$bb['author'];
+$genres=$bb['genre'];
+$qtes=$bb['qte'];
+$Descriptions=$bb['Description'];
+
 $bn=$_POST['name'];
 $au=$_POST['auth'];
 $kte=$_POST['qte'];
@@ -59,21 +67,22 @@ if($bn!=NULL && $au!=NULL)
 <br />
 <br />
 
-<span class="SubHead">MODIFIER DES LIVRES</span>
+<span class="SubHead">MODIFIER LE LIVRE</span>
 <br />
 <br />
 <form method="post" action="" enctype="multipart/form-data">
 <table border="0" class="table" cellpadding="10" cellspacing="10">
 <tr><td class="msg" align="center" colspan="2"><?php echo $msg;?></td></tr>
-  /></td></tr> 
-<tr><td class="labels">Nom de livre : </td><td><input type="text" name="name" placeholder="Entrer le nom de livre" size="25" class="fields" required="required" value='<?php echo($y['name'])?>'  /></td></tr>
-<tr><td class="labels">Auteur : </td><td><input type="text" name="auth" placeholder="Auteur" size="25" class="fields" required="required"  /></td></tr>
-<tr><td class="labels"> Quantité: </td><td><input type="text" name="qte" placeholder="Quantité" size="25" class="fields" required="required"  /></td></tr>
+</td></tr> 
+<tr><td class="labels">Nom de livre : </td><td><input type="text" name="name" placeholder="Entrer le nom de livre" size="25" class="fields" required="required" value='<?php echo $nom; ?>'  /></td></tr>
+<tr><td class="labels">Auteur : </td><td><input type="text" name="auth" placeholder="Auteur" size="25" class="fields" required="required" value='<?php echo $autheur; ?>' /></td></tr>
+<tr><td class="labels"> Quantité: </td><td><input type="text" name="qte" placeholder="Quantité" size="25" class="fields" required="required"  value='<?php echo $qtes; ?>'/></td></tr>
 <tr>
 <td class="labels"> Genre</td>
 <td>
 <select name='genre'>
-		
+
+		<option value='<?php echo $genres; ?>' ><?php echo $genres; ?></option>
 		<option value='SCIENCE' >SCIENCE</option>
 		<option value='INFORMATIQUE' >INFORMATIQUE</option>
 		<option value='ECONOMIE'  >ECONOMIE</option>
@@ -90,7 +99,7 @@ if($bn!=NULL && $au!=NULL)
  <tr class="SubHead" style="text-decoration:underline;"> <th class="labels" rowspan=2
  
  span=2 rowspan=5>description </th> 
- <td colspan=4> <textarea name='desc'  rows=10 cols=90> description ou bien résume...</textarea> </td></tr>
+ <td colspan=4> <textarea name='desc'  rows=10 cols=90><?php echo $Descriptions; ?></textarea> </td></tr>
 <tr><td colspan="2" align="center"><input type="submit" value="Modifier" class="fields" /></td></tr>
 
 
