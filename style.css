@@ -1,0 +1,16 @@
+.class1{
+	background-image:url(images/a.jpg);
+	margin:0px;
+
+}
+.class1 body{
+	color:black;
+}
+.class1 table{
+	border-radius:5px;
+	padding:0px 5px;
+	border:1px solid #FF3;
+	background-color:#F06262;
+	color:white;
+
+	}
